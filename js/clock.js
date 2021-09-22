@@ -84,4 +84,6 @@ function setDays(days) {
     }
 }
 
-init()
+window.onload = () =>{
+  init()
+}
