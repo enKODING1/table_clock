@@ -3,7 +3,6 @@
 .info-box {
     display: flex;
     flex-direction: column;
-
 }
 
 
@@ -16,11 +15,11 @@
 /* 시계 */
 .color {
     color: rgb(179, 179, 179);
-
+    text-align: center;
 }
 
 .size-fixed {
-    width: 147px;
+    width: 1.8em;
     text-align: center;
 
 }
@@ -29,16 +28,15 @@
 #date-name {
     font-size: 1rem;
     text-align: center;
-
 }
-
 
 
 /* 모바일 화면일때 */
 @media screen and (max-width: 769px) {
-    .size-fixed {
-        width: 5em;
+
+
+    #date-name {
+        font-size: 0.8rem;
         text-align: center;
     }
-
 }
