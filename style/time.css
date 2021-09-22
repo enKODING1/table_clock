@@ -100,11 +100,16 @@
     }
 
     .time-table {
-        transform: translateY(60%);
+        transform: translateY(30%);
 
     }
 
     .date-time {
         width: 35%;
+    }
+
+    .days-wrap {
+        position: relative;
+        top: 24%;
     }
 }
