@@ -1,5 +1,6 @@
 /* 시계 전체를 감싸고 있는 div */
 .clock-wrap {
+    display: inline-block;
     transform: translate(50%, 30%);
     background-color: #474c52;
     width: 50%;
@@ -109,5 +110,13 @@
     .days-wrap {
         position: relative;
         top: 24%;
+    }
+}
+
+/*화면크기가 601px 보다 크고 1100px 보다 작을때*/
+@media only screen and (min-width: 601px) and (max-width:1100px) {
+    .clock-wrap {
+        border: 3px solid red;
+        width: 80%;
     }
 }
