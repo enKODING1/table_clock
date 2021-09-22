@@ -1,0 +1,44 @@
+/* 시계 모양등 디자인에 대한 정의 */
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+/* 시계 사이 표시 */
+.dot {
+    color: rgb(179, 179, 179);
+}
+
+/* 시계 */
+.color {
+    color: rgb(179, 179, 179);
+
+}
+
+.size-fixed {
+    width: 147px;
+    text-align: center;
+
+}
+
+/* 시간아래 역할 표시 */
+#date-name {
+    font-size: 1rem;
+    text-align: center;
+
+}
+
+
+
+/* 모바일 화면일때 */
+@media screen and (max-width: 769px) {
+    .size-fixed {
+        width: 5em;
+        text-align: center;
+    }
+
+}
