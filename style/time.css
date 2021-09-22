@@ -8,10 +8,6 @@
     padding: 10px;
 }
 
-
-
-
-
 /* clock-wrap 아래 div */
 .time {
     width: 96%;
@@ -37,6 +33,7 @@
     height: 5vh;
     margin: 0 auto;
     transition: 1s all;
+    
 
 }
 
@@ -106,6 +103,7 @@
 
     .date-time {
         width: 35%;
+        margin-bottom: 6%;
     }
 
     .days-wrap {
