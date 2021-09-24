@@ -1,5 +1,6 @@
 var date_data = document.querySelectorAll('#date')
 var item = document.querySelectorAll('.item');
+var sec = document.querySelector('#sec');
 
 var days_list = [
     'MON',
@@ -10,6 +11,7 @@ var days_list = [
     'SAT',
     'SUN'
 ];
+
 
 var day = '';
 
@@ -29,7 +31,6 @@ function setClock() {
         minuts: now.getMinutes(),
         sec: now.getSeconds()
     };
-
     showScreen(date);
     //date.day 는 1~7 == 월 ~ 일
     setDays(date.day);
@@ -40,12 +41,12 @@ function setClock() {
 function showScreen(date) {
     date_data[0].innerHTML = fillZero(date.year);
     date_data[1].innerHTML = fillZero(date.month + 1);
-        
     date_data[2].innerHTML = fillZero(date.date);
     item[0].innerHTML = day;
     item[1].innerHTML = fillZero(date.hours)
     item[2].innerHTML = fillZero(date.minuts);
     item[3].innerHTML = fillZero(date.sec)
+    Ani(sec);
 }
 
 //숫자가 한자리가 되면 앞에 0을 채워주는 함수
@@ -82,6 +83,9 @@ function setDays(days) {
             console.log('error');
             break;
     }
+}
+function Ani(dom){
+    dom.style.animation = '1s trans infinite';
 }
 
 window.onload = () =>{

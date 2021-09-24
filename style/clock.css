@@ -3,10 +3,8 @@
 .info-box {
     display: flex;
     flex-direction: column;
-    
+
 }
-
-
 
 /* 시계 사이 표시 */
 .dot {
@@ -43,7 +41,7 @@
     }
 }
 
-@media only screen and (min-width:1800px){
+@media only screen and (min-width:1800px) {
     #date-name {
         font-size: 3rem;
         text-align: center;
@@ -51,8 +49,4 @@
 }
 
 /*가로모드일때*/
-@media (orientation: landscape) and (max-height:400px){
-
-    
-   
-}
+@media (orientation: landscape) and (max-height:400px) {}
