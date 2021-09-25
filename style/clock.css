@@ -9,12 +9,14 @@
 /* 시계 사이 표시 */
 .dot {
     color: rgb(179, 179, 179);
+    transition: all 1s;
 }
 
 /* 시계 */
 .color {
     color: rgb(143, 143, 143);
     text-align: center;
+    transition: all 1s;
 }
 
 .size-fixed {

@@ -1,42 +1,60 @@
+let control_mode = window.matchMedia && window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .matches;
+
 var btn = document.querySelector('.dark');
+
+
 let mode = 'white'
-//다크모드 옵션
-const night_background = [
-    {
-        elem: "body",
-        color: "#2f2f2f"
-    }, {
-        elem: ".clock-wrap",
-        color: "#474c52"
-    }
-];
-const night_font = [
-    {
-        elem: ".darknight",
-        color: "black"
-    }
-];
-//라이트 모드 옵션
-const light_background = [
-    {
-        elem: "body",
-        color: "white"
-    }, {
-        elem: ".clock-wrap",
-        color: "black"
-    }
-];
-
-const light_font = [
-    {
-        elem: ".darknight",
-        color: "black"
-    }
-];
 
 
+//다크 모드 배경색 폰트색
+const night = {
+    background: [
+        {
+            elem: "body",
+            color: "#2f2f2f"
+        }, {
+            elem: ".clock-wrap",
+            color: "#474c52"
+        }
+    ],
+    font: [
+        {
+            //yy mm dd
+            elem: "#NightnLight",
+            color: "aliceblue"
+        }, {
+            //hh:mm:ss
+            elem: "body",
+            color: "aliceblue"
+        }
+    ]
+};
 
-
+//라이트 모드 배경색 폰트색
+const light = {
+    background: [
+        {
+            elem: "body",
+            color: "#fff"
+        }, {
+            elem: ".clock-wrap",
+            color: "#e6e7e7"
+        }
+    ],
+    font: [
+        {
+            //yy mm dd
+            elem: "#NightnLight",
+            color: "black"
+        }, {
+            //hh:mm:ss
+            elem: "body",
+            color: "black"
+        }
+    ]
+};
 
 function Background(dom, color) {
     return document
@@ -44,6 +62,7 @@ function Background(dom, color) {
         .style
         .backgroundColor = color;
 }
+
 function FontColor(dom, color) {
     return document
         .querySelector(dom)
@@ -51,41 +70,68 @@ function FontColor(dom, color) {
         .color = color;
 }
 
-function NightMode(night_background, night_font) {
-    // 백그라운드 색 변경
-    night_background.map((night_bg) => {
-        `${Background(night_bg.elem, night_bg.color)}`
+let themeHandler = (bg_handler, ft_handler) => {
+    //배경화면 변경
+    bg_handler.map((mode) => {
+        `${Background(mode.elem, mode.color)}`
     });
-    //font 색 변경
-    night_font.map((night_ft) => {
-        `${FontColor(night_ft.elem, night_ft.color)}`
-    });
-}
-
-function LightMode(light_background, light_font) {
-    // 백그라운드 색 변경
-    light_background.map((light_bg) => {
-        `${Background(light_bg.elem, light_bg.color)}`
-    });
-    //font 색 변경
-    light_font.map((light_ft) => {
-        `${FontColor(light_ft.elem, light_ft.color)}`
+    //폰트 변경
+    ft_handler.map((mode) => {
+        `${FontColor(mode.elem, mode.color)}`
     });
 }
 
 
-
+function updateBtnStatus(btn_status){
+    var btn_val = btn.innerHTML= btn_status
+}
 
 btn.addEventListener('click', () => {
     if (mode === 'white') {
 
-        LightMode(light_background, light_font);
+        themeHandler(light.background, light.font);
         mode = "black";
-
+        updateBtnStatus('light mode(test button)');
+    
     } else if (mode === 'black') {
 
-        NightMode(night_background, night_font);
+        themeHandler(night.background, night.font);
         mode = "white";
+        updateBtnStatus('dark mode(test button)');
 
     }
 })
+
+if (control_mode === true) {
+    themeHandler(night.background, night.font);
+    mode = "white";
+    updateBtnStatus('dark mode(test button)');
+} else {
+    themeHandler(light.background, light.font);
+    mode = "black";
+    updateBtnStatus('light mode(test button)');
+}
+
+
+
+
+
+//os 테마모드 감지
+window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', () => {
+        let control_mode = window.matchMedia && window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .matches;
+
+       if(control_mode === true){
+        themeHandler(night.background, night.font);
+        mode = "white";
+        updateBtnStatus('dark mode(test button)');
+       }else{
+        themeHandler(light.background, light.font);
+        mode = "black";
+        updateBtnStatus('light mode(test button)');
+       }
+    })
+
