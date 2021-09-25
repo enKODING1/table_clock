@@ -4,4 +4,5 @@ body {
     padding: 0;
     font-family: 'Spartan', sans-serif;
     color: aliceblue;
+    transition: 1s all;
 }

@@ -3,20 +3,20 @@
 .info-box {
     display: flex;
     flex-direction: column;
-    
+
 }
-
-
 
 /* 시계 사이 표시 */
 .dot {
     color: rgb(179, 179, 179);
+    transition: all 1s;
 }
 
 /* 시계 */
 .color {
     color: rgb(143, 143, 143);
     text-align: center;
+    transition: all 1s;
 }
 
 .size-fixed {
@@ -43,7 +43,7 @@
     }
 }
 
-@media only screen and (min-width:1800px){
+@media only screen and (min-width:1800px) {
     #date-name {
         font-size: 3rem;
         text-align: center;
@@ -51,8 +51,4 @@
 }
 
 /*가로모드일때*/
-@media (orientation: landscape) and (max-height:400px){
-
-    
-   
-}
+@media (orientation: landscape) and (max-height:400px) {}
