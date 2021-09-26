@@ -47,6 +47,7 @@ function showScreen(date) {
     updateHour(date);
     updateMin(date);
     updateSec(date);
+
 }
 
 function updateYear(date) {
@@ -75,7 +76,7 @@ function updateMin(date) {
 }
 function updateSec(date) {
     item[3].innerHTML = fillZero(date.sec)
-    infiniteAni()
+    infiniteAni(sec)
     return item[3].innerHTML;
 }
 
