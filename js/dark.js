@@ -47,11 +47,11 @@ const light = {
         {
             //yy mm dd
             elem: "#NightnLight",
-            color: "black"
+            color: "#717171"
         }, {
             //hh:mm:ss
             elem: "body",
-            color: "black"
+            color: "#717171"
         }
     ]
 };
