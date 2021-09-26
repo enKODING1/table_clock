@@ -75,6 +75,7 @@ function updateMin(date) {
 }
 function updateSec(date) {
     item[3].innerHTML = fillZero(date.sec)
+    infiniteAni()
     return item[3].innerHTML;
 }
 
